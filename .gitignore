@@ -7,6 +7,7 @@ __pycache__/
 *.so
 
 database.sqlite
+*.code-workspace
 
 # Distribution / packaging
 .Python

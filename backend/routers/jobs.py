@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlmodel import select, Session
 from ..database import engine, get_session
-from ..models.jobs import JobsCreate, JobsRead, Job, JobsUpdate
+from ..models.jobs import JobsCreate, JobsRead, Job, JobsUpdate, JobReadWithOccupationGroup
 from typing import List
 
 router = APIRouter(
@@ -16,7 +16,7 @@ async def get_jobs(*, session: Session = Depends(get_session), offset: int = 0, 
     return jobs
 
 
-@router.get("/{job_id}", response_model=JobsRead)
+@router.get("/{job_id}", response_model=JobReadWithOccupationGroup)
 async def get_job(*, session: Session = Depends(get_session), job_id: int):
     job = session.get(Job, job_id)
     if not job:

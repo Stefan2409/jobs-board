@@ -10,7 +10,7 @@ idna==3.3
 pycodestyle @ file:///tmp/build/80754af9/pycodestyle_1636635402688/work
 pydantic==1.9.1
 sniffio==1.2.0
-SQLAlchemy==1.4.37
+SQLAlchemy==1.4.35
 sqlalchemy2-stubs==0.0.2a24
 sqlmodel==0.0.6
 starlette==0.19.1

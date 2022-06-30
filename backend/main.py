@@ -25,9 +25,9 @@ def create_database_data():
     occupation4 = OccupationGroup(name="Organisation")
 
     job1 = Job(title="Controller", description="Bla bla bla",
-               created_at=datetime.now(), occupation_groups=[occupation1, occupation3])
+               created_at=datetime.now(), occupationgroup=[occupation1, occupation3])
     job2 = Job(title="Hackler", description="Bla bla bla",
-               created_at=datetime.now(), occupation_groups=[occupation2])
+               created_at=datetime.now(), occupationgroup=[occupation2])
 
     with Session(engine) as session:
         session.add(job1)
