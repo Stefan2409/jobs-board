@@ -16,8 +16,9 @@ class JobsBase(SQLModel):
 class Job(JobsBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     created_at: Optional[datetime] = datetime.now()
+
     occupation_groups: List["OccupationGroup"] = Relationship(
-        back_populates="job", link_model=JobsOccupationGroup)
+        back_populates="jobs", link_model=JobsOccupationGroup)
 
 
 class JobsRead(JobsBase):

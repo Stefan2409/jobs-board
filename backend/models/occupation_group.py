@@ -13,8 +13,9 @@ class OccupationGroupBase(SQLModel):
 
 class OccupationGroup(OccupationGroupBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
+
     jobs: List["Job"] = Relationship(
-        back_populates="occupationgroup", link_model=JobsOccupationGroup)
+        back_populates="occupationgroups", link_model=JobsOccupationGroup)
 
 
 class OccupationGroupRead(OccupationGroupBase):
